@@ -19,7 +19,7 @@ public class JobTest {
 
         @Test
         public void testSettingJobId() {
-                Employer employer1 = new Employer("launchcode");
+                Employer employer1 = new Employer("launchCode");
                 Location location1 = new Location("developer");
                 PositionType positionType1 = new PositionType("developer");
                 CoreCompetency coreCompetency1 = new CoreCompetency("coding");
