@@ -2,7 +2,7 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
-    public class Job {
+   public class Job {
         private String name;
         private Employer employer;
         private Location location;
@@ -25,8 +25,20 @@ import java.util.Objects;
             this.coreCompetency = coreCompetency;
 
     }
+       public String dataAvailable(Object data) {
+           return data != null ? data.toString() : "Data not available";
+       }
+       public String toString() {
+           return "\n" +
+                   "ID: " + getId() + "\n" +
+                   "Name: " + getName() + "\n" +
+                   "Employer: " + getEmployer() + "\n" +
+                   "Location: " + getLocation() + "\n" +
+                   "Position Type: " + getPositionType() + "\n" +
+                   "Core Competency: " + getCoreCompetency() + "\n";
+       }
 
-        @Override
+       @Override
         public boolean equals(Object o) {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
@@ -91,19 +103,19 @@ import java.util.Objects;
             return id;
         }
 
-        public String toString() {
-            return "\n" +
-                    "ID: " + getId() + "\n" +
-                    "Name: " + getName() + "\n" +
-                    "Employer: " + getEmployer() + "\n" +
-                    "Location: " + getLocation() + "\n" +
-                    "Position Type: " + getPositionType() + "\n" +
-                    "Core Competency: " + getCoreCompetency() + "\n";
-        }
+//        public String toString() {
+//            return "\n" +
+//                    "ID: " + getId() + "\n" +
+//                    "Name: " + getName() + "\n" +
+//                    "Employer: " + getEmployer() + "\n" +
+//                    "Location: " + getLocation() + "\n" +
+//                    "Position Type: " + getPositionType() + "\n" +
+//                    "Core Competency: " + getCoreCompetency() + "\n";
+//        }
 
-        public String dataAvailable(Object data) {
-            return data != null ? data.toString() : "Data not available";
-        }
+//        public String dataAvailable(Object data) {
+//            return data != null ? data.toString() : "Data not available";
+//        }
 
     }
 
