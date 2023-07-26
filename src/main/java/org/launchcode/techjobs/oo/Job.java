@@ -46,29 +46,41 @@ import java.util.Objects;
 //                   && Objects.equals(location, job.location) && Objects.equals(positionType, job.positionType)
 //                   && Objects.equals(coreCompetency, job.coreCompetency);
 //       }
-       @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            Job job = (Job) o;
-            return id == job.id && Objects.equals(name, job.name) && Objects.equals(employer, job.employer) && Objects.equals(location, job.location) && Objects.equals(positionType, job.positionType) && Objects.equals(coreCompetency, job.coreCompetency) && Objects.equals(value, job.value);
-        }
-
-//        @Override
-//        public int hashCode() {
-//            return Objects.hash(name, employer, location, positionType, coreCompetency, value);
+//       @Override
+//        public boolean equals(Object o) {
+//            if (this == o) return true;
+//            if (o == null || getClass() != o.getClass()) return false;
+//            Job job = (Job) o;
+//            return id == job.id && Objects.equals(name, job.name) && Objects.equals(employer, job.employer) && Objects.equals(location, job.location) && Objects.equals(positionType, job.positionType) && Objects.equals(coreCompetency, job.coreCompetency) && Objects.equals(value, job.value);
 //        }
+//
+////        @Override
+////        public int hashCode() {
+////            return Objects.hash(name, employer, location, positionType, coreCompetency, value);
+////        }
+//@Override
+//public int hashCode() {
+//    int result = 17;
+//    result = 31 * result + getId();
+//    result = 31 * result + getName().hashCode();
+//    result = 31 * result + getEmployer().getValue().hashCode();
+//    result = 31 * result + getLocation().getValue().hashCode();
+//    result = 31 * result + getPositionType().getValue().hashCode();
+//    result = 31 * result + getCoreCompetency().getValue().hashCode();
+//    return result;
+//}
 @Override
-public int hashCode() {
-    int result = 17;
-    result = 31 * result + getId();
-    result = 31 * result + getName().hashCode();
-    result = 31 * result + getEmployer().getValue().hashCode();
-    result = 31 * result + getLocation().getValue().hashCode();
-    result = 31 * result + getPositionType().getValue().hashCode();
-    result = 31 * result + getCoreCompetency().getValue().hashCode();
-    return result;
+public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Job job = (Job) o;
+    return getId() == job.getId();
 }
+
+       @Override
+       public int hashCode() {
+           return Objects.hash(getId());
+       }
         public String getName() {
             return name;
         }
