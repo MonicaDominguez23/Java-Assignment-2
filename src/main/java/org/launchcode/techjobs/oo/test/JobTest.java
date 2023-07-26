@@ -55,8 +55,9 @@ public class JobTest {
         public void testJobsForEquality() {
                 Job newJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality Control"), new CoreCompetency("Persistence"));
                 Job newJob2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality Control"), new CoreCompetency("Persistence"));
-//                assertEquals(false, newJob.equals(newJob2));
-                assertFalse(newJob.equals(newJob2));
+                Assert.assertEquals(false, newJob.equals(newJob2));
+                Assert.assertFalse(newJob.equals(newJob2));
+
 
         }
 
@@ -76,6 +77,7 @@ public class JobTest {
                 Assert.assertTrue(actualOutput.startsWith("\n"));
                 Assert.assertTrue(actualOutput.endsWith("\n"));
                 Assert.assertEquals(expectedOutput, newJob.toString());
+
         }
 
         @Test
