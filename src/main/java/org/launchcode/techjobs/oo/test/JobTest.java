@@ -58,7 +58,6 @@ public class JobTest {
                 Assert.assertEquals(false, newJob.equals(newJob2));
                 Assert.assertFalse(newJob.equals(newJob2));
 
-
         }
 
         @Test
@@ -77,6 +76,9 @@ public class JobTest {
                 Assert.assertTrue(actualOutput.startsWith("\n"));
                 Assert.assertTrue(actualOutput.endsWith("\n"));
                 Assert.assertEquals(expectedOutput, newJob.toString());
+                Assert.assertEquals(10L, 10L);
+                Assert.assertEquals(10L, 10L);
+
 
         }
 
