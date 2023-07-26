@@ -71,8 +71,22 @@ public class JobTest {
                         "Position Type: " + "Quality Control" + "\n" +
                         "Core Competency: " + "Persistence" + "\n";
 
-                assertEquals(expectedOutput, newJob.toString());
+                String actualOutput = newJob.toString();
+
+                assertTrue(actualOutput.startsWith("\n"));
+                assertTrue(actualOutput.endsWith("\n"));
+                assertEquals(expectedOutput, actualOutput.trim()); // Trim to ignore extra spaces before and after the new lines
         }
+//                Job newJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality Control"), new CoreCompetency("Persistence"));
+//                String expectedOutput = "\n" +
+//                        "ID: " + newJob.getId() + "\n" +
+//                        "Name: " + "Product tester" + "\n" +
+//                        "Employer: " + "ACME" + "\n" +
+//                        "Location: " + "Desert" + "\n" +
+//                        "Position Type: " + "Quality Control" + "\n" +
+//                        "Core Competency: " + "Persistence" + "\n";
+//
+//                Assert.assertEquals(expectedOutput, newJob.toString());
 
         @Test
         public void testToStringContainsCorrectLabelsAndData() {
@@ -86,19 +100,22 @@ public class JobTest {
                         "Core Competency: " + "Persistence" + "\n";
 
                 String actualOutput = newJob.toString();
-
-                assertTrue(actualOutput.contains("ID: " + newJob.getId()));
-                assertTrue(actualOutput.contains("Name: Product tester"));
-                assertTrue(actualOutput.contains("Employer: ACME"));
-                assertTrue(actualOutput.contains("Location: Desert"));
-                assertTrue(actualOutput.contains("Position Type: Quality Control"));
-                assertTrue(actualOutput.contains("Core Competency: Persistence"));
+                assertEquals(expectedOutput, actualOutput);
         }
+
+//                Assert.assertTrue(actualOutput.contains("ID: " + newJob.getId()));
+//                Assert.assertTrue(actualOutput.contains("Name: Product tester"));
+//                Assert.assertTrue(actualOutput.contains("Employer: ACME"));
+//                Assert.assertTrue(actualOutput.contains("Location: Desert"));
+//                Assert.assertTrue(actualOutput.contains("Position Type: Quality Control"));
+//                Assert.assertTrue(actualOutput.contains("Core Competency: Persistence"));
+//        }
 
 
         @Test
         public void testToStringHandlesEmptyField() {
-                Job newJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality Control"), new CoreCompetency("Persistence"));
+//
+                Job newJob = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
                 String expectedOutput = "\n" +
                         "ID: " + newJob.getId() + "\n" +
                         "Name: " + (newJob.getName() != null && !newJob.getName().isEmpty() ? newJob.getName() : "Data not available") + "\n" +
@@ -109,7 +126,6 @@ public class JobTest {
                 Assert.assertEquals(expectedOutput, newJob.toString());
         }
 }
-
 
 
 

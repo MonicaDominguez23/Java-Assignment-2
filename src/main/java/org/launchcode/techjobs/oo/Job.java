@@ -31,11 +31,11 @@ import java.util.Objects;
        public String toString() {
            return "\n" +
                    "ID: " + getId() + "\n" +
-                   "Name: " + getName() + "\n" +
-                   "Employer: " + getEmployer() + "\n" +
-                   "Location: " + getLocation() + "\n" +
-                   "Position Type: " + getPositionType() + "\n" +
-                   "Core Competency: " + getCoreCompetency() + "\n";
+                   "Name: " + (getName().isEmpty() ? "Data not available" : getName()) + "\n" +
+                   "Employer: " + (getEmployer().getValue().isEmpty() ? "Data not available" : getEmployer()) + "\n" +
+                   "Location: " + (getLocation().getValue().isEmpty() ? "Data not available" : getLocation()) + "\n" +
+                   "Position Type: " + (getPositionType().getValue().isEmpty() ? "Data not available" : getPositionType()) + "\n" +
+                   "Core Competency: " + (getCoreCompetency().getValue().isEmpty() ? "Data not available" : getCoreCompetency()) + "\n";
        }
 
        @Override
