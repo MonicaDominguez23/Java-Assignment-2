@@ -16,6 +16,7 @@ import static org.junit.Assert.*;
 public class JobTest {
 
 
+
         @Test
         public void testSettingJobId() {
                 Employer employer1 = new Employer("launchCode");
@@ -57,7 +58,7 @@ public class JobTest {
                 Job newJob2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality Control"), new CoreCompetency("Persistence"));
                 Assert.assertEquals(false, newJob.equals(newJob2));
                 Assert.assertFalse(newJob.equals(newJob2));
-
+//                Assert.assertTrue(newJob.equals(newJob2));
         }
 
         @Test

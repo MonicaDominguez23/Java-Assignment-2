@@ -36,14 +36,22 @@ import java.util.Objects;
                    "Core Competency: " + (getCoreCompetency().getValue().isEmpty() ? "Data not available" : getCoreCompetency().getValue()) + "\n";
        }
 
-
        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            Job job = (Job) o;
-            return id == job.id && Objects.equals(name, job.name) && Objects.equals(employer, job.employer) && Objects.equals(location, job.location) && Objects.equals(positionType, job.positionType) && Objects.equals(coreCompetency, job.coreCompetency) && Objects.equals(value, job.value);
-        }
+       public boolean equals(Object o) {
+           if (this == o) return true;
+           if (o == null || getClass() != o.getClass()) return false;
+           Job job = (Job) o;
+           return id == job.id && Objects.equals(name, job.name) && Objects.equals(employer, job.employer)
+                   && Objects.equals(location, job.location) && Objects.equals(positionType, job.positionType)
+                   && Objects.equals(coreCompetency, job.coreCompetency);
+       }
+//       @Override
+//        public boolean equals(Object o) {
+//            if (this == o) return true;
+//            if (o == null || getClass() != o.getClass()) return false;
+//            Job job = (Job) o;
+//            return id == job.id && Objects.equals(name, job.name) && Objects.equals(employer, job.employer) && Objects.equals(location, job.location) && Objects.equals(positionType, job.positionType) && Objects.equals(coreCompetency, job.coreCompetency) && Objects.equals(value, job.value);
+//        }
 
 //        @Override
 //        public int hashCode() {
