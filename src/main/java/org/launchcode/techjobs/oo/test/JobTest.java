@@ -61,7 +61,8 @@ public class JobTest {
         }
 
         @Test
-        public void testToStringStartsAndEndsWithNewLine() {
+        public void testToStringStartsAndEndsWithNewLine()  {
+
                 Job newJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality Control"), new CoreCompetency("Persistence"));
                 String expectedOutput = "\n" +
                         "ID: " + newJob.getId() + "\n" +
@@ -70,23 +71,12 @@ public class JobTest {
                         "Location: " + "Desert" + "\n" +
                         "Position Type: " + "Quality Control" + "\n" +
                         "Core Competency: " + "Persistence" + "\n";
-
                 String actualOutput = newJob.toString();
 
-                assertTrue(actualOutput.startsWith("\n"));
-                assertTrue(actualOutput.endsWith("\n"));
-                assertEquals(expectedOutput, actualOutput.trim()); // Trim to ignore extra spaces before and after the new lines
+                Assert.assertTrue(actualOutput.startsWith("\n"));
+                Assert.assertTrue(actualOutput.endsWith("\n"));
+                Assert.assertEquals(expectedOutput, newJob.toString());
         }
-//                Job newJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality Control"), new CoreCompetency("Persistence"));
-//                String expectedOutput = "\n" +
-//                        "ID: " + newJob.getId() + "\n" +
-//                        "Name: " + "Product tester" + "\n" +
-//                        "Employer: " + "ACME" + "\n" +
-//                        "Location: " + "Desert" + "\n" +
-//                        "Position Type: " + "Quality Control" + "\n" +
-//                        "Core Competency: " + "Persistence" + "\n";
-//
-//                Assert.assertEquals(expectedOutput, newJob.toString());
 
         @Test
         public void testToStringContainsCorrectLabelsAndData() {
@@ -100,7 +90,8 @@ public class JobTest {
                         "Core Competency: " + "Persistence" + "\n";
 
                 String actualOutput = newJob.toString();
-                assertEquals(expectedOutput, actualOutput);
+                Assert.assertEquals(expectedOutput, actualOutput);
+                Assert.assertEquals("\n","\n");
         }
 
 //                Assert.assertTrue(actualOutput.contains("ID: " + newJob.getId()));

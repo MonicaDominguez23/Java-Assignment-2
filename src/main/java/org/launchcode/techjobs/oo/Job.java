@@ -25,18 +25,17 @@ import java.util.Objects;
             this.coreCompetency = coreCompetency;
 
     }
-       public String dataAvailable(Object data) {
-           return data != null ? data.toString() : "Data not available";
-       }
+
        public String toString() {
            return "\n" +
                    "ID: " + getId() + "\n" +
                    "Name: " + (getName().isEmpty() ? "Data not available" : getName()) + "\n" +
-                   "Employer: " + (getEmployer().getValue().isEmpty() ? "Data not available" : getEmployer()) + "\n" +
-                   "Location: " + (getLocation().getValue().isEmpty() ? "Data not available" : getLocation()) + "\n" +
-                   "Position Type: " + (getPositionType().getValue().isEmpty() ? "Data not available" : getPositionType()) + "\n" +
-                   "Core Competency: " + (getCoreCompetency().getValue().isEmpty() ? "Data not available" : getCoreCompetency()) + "\n";
+                   "Employer: " + (getEmployer().getValue().isEmpty() ? "Data not available" : getEmployer().getValue()) + "\n" +
+                   "Location: " + (getLocation().getValue().isEmpty() ? "Data not available" : getLocation().getValue()) + "\n" +
+                   "Position Type: " + (getPositionType().getValue().isEmpty() ? "Data not available" : getPositionType().getValue()) + "\n" +
+                   "Core Competency: " + (getCoreCompetency().getValue().isEmpty() ? "Data not available" : getCoreCompetency().getValue()) + "\n";
        }
+
 
        @Override
         public boolean equals(Object o) {
@@ -46,11 +45,21 @@ import java.util.Objects;
             return id == job.id && Objects.equals(name, job.name) && Objects.equals(employer, job.employer) && Objects.equals(location, job.location) && Objects.equals(positionType, job.positionType) && Objects.equals(coreCompetency, job.coreCompetency) && Objects.equals(value, job.value);
         }
 
-        @Override
-        public int hashCode() {
-            return Objects.hash(name, employer, location, positionType, coreCompetency, value);
-        }
-
+//        @Override
+//        public int hashCode() {
+//            return Objects.hash(name, employer, location, positionType, coreCompetency, value);
+//        }
+@Override
+public int hashCode() {
+    int result = 17;
+    result = 31 * result + getId();
+    result = 31 * result + getName().hashCode();
+    result = 31 * result + getEmployer().getValue().hashCode();
+    result = 31 * result + getLocation().getValue().hashCode();
+    result = 31 * result + getPositionType().getValue().hashCode();
+    result = 31 * result + getCoreCompetency().getValue().hashCode();
+    return result;
+}
         public String getName() {
             return name;
         }
@@ -118,14 +127,14 @@ import java.util.Objects;
 //        }
 
     }
-
-
-        // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
-    //  other five fields. The second constructor should also call the first in order to initialize
-    //  the 'id' field.
-
-    // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
-    //  match.
-
-    // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
-    //  and id.
+//
+//
+//         TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
+//      other five fields. The second constructor should also call the first in order to initialize
+//      the 'id' field.
+//
+//     TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
+//      match.
+//
+//     TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
+//      and id.
